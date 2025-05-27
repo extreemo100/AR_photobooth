@@ -35,8 +35,8 @@
             z-index: 100;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            max-width: 90%;
+            gap: 00px;
+            max-width: 100%;
         }
         
         .control-group {
@@ -101,10 +101,10 @@
         
         #photo-preview, #video-preview {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            max-width: 200px;
-            max-height: 150px;
+            bottom: 10px;
+            right: 10px;
+            max-width: 250px;
+            max-height: 180px;
             border: 2px solid white;
             border-radius: 5px;
             z-index: 100;
@@ -152,8 +152,8 @@
         }
         
         .format-button {
-            margin-right: 10px;
-            padding: 8px 12px;
+            margin-right: 1px;
+            padding: 2px 2px;
             background: rgba(100, 100, 255, 0.8);
             color: white;
             border: 2px solid transparent;
@@ -168,7 +168,7 @@
         @media (max-width: 768px) {
             button, select {
                 font-size: 12px;
-                padding: 8px 10px;
+                padding: 2px 2px;
             }
             
             #controls {
@@ -277,7 +277,7 @@
                 width: 1920,
                 height: 1080,
                 aspectRatio: 16/9,
-                planeWidth: 16,
+                planeWidth: 32,
                 planeHeight: 9,
                 cameraZ: 5,
                 videoPlaneWidth: 4,
@@ -456,8 +456,8 @@
             const config = currentFormat;
             const container = document.getElementById('canvas-container');
             
-            let width = config.width;
-            let height = config.height;
+            let width = 1000 ;
+            let height = 2000;
             
             // Scale to fit window
             const windowAspect = window.innerWidth / window.innerHeight;
@@ -465,11 +465,11 @@
             
             if (windowAspect > formatAspect) {
                 // Window is wider
-                height = Math.min(window.innerHeight * 0.9, height);
+                height = Math.min(window.innerHeight * 1.2, height);
                 width = height * formatAspect;
             } else {
                 // Window is taller
-                width = Math.min(window.innerWidth * 0.9, width);
+                width = Math.min(window.innerWidth * 1, width);
                 height = width / formatAspect;
             }
             
